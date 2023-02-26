@@ -2,10 +2,11 @@ import data, quiz_brain
 import question_model
 
 
+
 question_bank = []
 
-for q in data.question_data:
-    question_bank.append(question_model.Question(q["text"], q["answer"]))
+for q in data.question_data['results']:
+    question_bank.append(question_model.Question(q['question'], q['correct_answer']))
 
 quiz = quiz_brain.QuizBrain(question_bank)
 
